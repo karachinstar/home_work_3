@@ -16,10 +16,18 @@ def input_val():
 
 
 season_list = ['зима', 'весна', 'лето', 'осень']
-season_dict = {'зима': [12, 1, 2],
-               'Весна': [3, 4, 5],
-               'Лето': [6, 7, 8],
-               'осень': [9, 10, 11]}
+season_dict = {12: 'зима',
+               1: 'зима',
+               2: 'зима',
+               3: 'весна',
+               4: 'весна',
+               5: 'весна',
+               6: 'лето',
+               7: 'лето',
+               8: 'лето',
+               9: 'осень',
+               10: 'осень',
+               11: 'осень'}
 number_mouth = input_val()
 if number_mouth > 12:
     print('Вы ввели неверный номер месяца')
@@ -31,5 +39,4 @@ else:
         n = ((number_mouth // 3) + (1 if number_mouth % 4 >= 0 else 0)) - 1
         print(n)
         print(f'Результат через список - месяц №{number_mouth} - это {season_list[n]}')
-print(list(season_dict.keys())
-      [list(season_dict.values()).index(number_mouth)])
+print(f'Результат через словарь - месяц №{number_mouth} - это {season_dict[number_mouth]}')
